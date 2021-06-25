@@ -13,18 +13,20 @@ To setup the watcher you need to follow these steps:
      * Scope: Project Files
      * Program: gocopyfw (or the path to the binary)
      * Arguments: -d $ProjectFileDir$ -f $FilePath$ -l [filesets]
-       * see examples for what filesets are
+       * see the File Sets section for what filesets are
   5. Advanced Options: All Unchecked
   6. Show Console: On Error
-`
 
-const rootCmdExample = `Most of the arguments are provided by IntelliJ, the only one you really have to configure is the
+#### File Sets
+Most of the arguments are provided by IntelliJ, the only one you really have to configure is the
 --linked-files or -l option which takes a list of FileSet's separated by commas. Each FileSet is a list of unique files
 separated by a semi-colon. Each FileSet can be as many files as you wish, as long as it's more than one. Usually each
 File should keep the respective slash used to denote a directory as a prefix, though it depends on the output of IntelliJ.
 
-The following is an example which will keep the config.yml files in sync, and the README.md files in sync (separately):
+The first example is one  which will keep the config.yml files in sync, and the README.md files in sync (separately).
+`
 
+const rootCmdExample = `
 gocopyfw -d $ProjectFileDir$ -f $FilePath$ -l /config.yml;/internal/config.yml;/internal/configuration/config.yml,/README.md;/internal/README.md
 `
 
