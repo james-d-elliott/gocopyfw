@@ -12,7 +12,7 @@ To setup the watcher you need to follow these steps:
      * File Type: Any
      * Scope: Project Files
      * Program: gocopyfw (or the path to the binary)
-     * Arguments: -d $ProjectFileDir$ -f $FilePath$ -l <your filesets>
+     * Arguments: -d $ProjectFileDir$ -f $FilePath$ -l [your filesets]
        * a fileset is a list of files that should remain the same separated by a ';' (semi-colon)
        * filesets can be separated by commas, i.e. each group of files you want to remain in sync
   5. Advanced Options: All Unchecked
