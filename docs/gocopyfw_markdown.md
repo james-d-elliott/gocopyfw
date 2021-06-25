@@ -6,6 +6,12 @@ Generate Markdown docs for the command
 gocopyfw markdown [flags]
 ```
 
+### Examples
+
+```
+go run ./cmd/gocopyfw markdown -d ./docs
+```
+
 ### Options
 
 ```
