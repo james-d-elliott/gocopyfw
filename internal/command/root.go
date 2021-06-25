@@ -15,10 +15,11 @@ import (
 // NewRootCmd returns the root cobra cmd.
 func NewRootCmd() (cmd *cobra.Command) {
 	cmd = &cobra.Command{
-		Use:   "gocopyfw",
-		Short: "Copy File Watcher for IntelliJ that copies files",
-		Long:  rootCmdLong,
-		RunE:  runRootCmdE,
+		Use:     "gocopyfw",
+		Short:   "Copy File Watcher for IntelliJ that copies files",
+		Long:    rootCmdLong,
+		Example: rootCmdExample,
+		RunE:    runRootCmdE,
 	}
 
 	cmd.Flags().StringP("project-file-dir", "d", "", "the project root directory from $ProjectFileDir$")

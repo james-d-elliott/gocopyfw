@@ -16,15 +16,28 @@ To setup the watcher you need to follow these steps:
      * File Type: Any
      * Scope: Project Files
      * Program: gocopyfw (or the path to the binary)
-     * Arguments: -d $ProjectFileDir$ -f $FilePath$ -l [your filesets]
-       * a fileset is a list of files that should remain the same separated by a ';' (semi-colon)
-       * filesets can be separated by commas, i.e. each group of files you want to remain in sync
+     * Arguments: -d $ProjectFileDir$ -f $FilePath$ -l [filesets]
+       * see examples for what filesets are
   5. Advanced Options: All Unchecked
   6. Show Console: On Error
 
 
 ```
 gocopyfw [flags]
+```
+
+### Examples
+
+```
+Most of the arguments are provided by IntelliJ, the only one you really have to configure is the
+--linked-files or -l option which takes a list of FileSet's separated by commas. Each FileSet is a list of unique files
+separated by a semi-colon. Each FileSet can be as many files as you wish, as long as it's more than one. Usually each
+File should keep the respective slash used to denote a directory as a prefix, though it depends on the output of IntelliJ.
+
+The following is an example which will keep the config.yml files in sync, and the README.md files in sync (separately):
+
+gocopyfw -d $ProjectFileDir$ -f $FilePath$ -l /config.yml;/internal/config.yml;/internal/configuration/config.yml,/README.md;/internal/README.md
+
 ```
 
 ### Options
